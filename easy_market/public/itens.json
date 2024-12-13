@@ -1,0 +1,35 @@
+{
+  "produtos": [
+    {
+      "itens": [
+        { "produto": "BATATA LISA RUPP ALHO MA 160g", "quantidade": 2 },
+        { "produto": "#MAC S AM OVOS ESP N9 500g", "quantidade": 1 },
+        { "produto": "CR DENT CLOSE MENTA 70g", "quantidade": 1 },
+        { "produto": "MOLHO TOMATE PRED TRAD 300g", "quantidade": 1 },
+        { "produto": "SARD GOMES OLEO 125g", "quantidade": 1 },
+        { "produto": "SAB FRA SV RELAX GARDENIA 85g", "quantidade": 1 },
+        { "produto": "BISC AYMORE TORT MOR 90g", "quantidade": 1 }
+      ],
+      "valorTotalNota": 31.71,
+      "dataDeEfetuacao": {
+        "dia": 24,
+        "mes": 12,
+        "ano": 2024,
+        "hora": 19,
+        "minuto": 40,
+        "segundo": 11
+      },
+      "local": {
+        "nomeEstabelecimento": "SUPERMERCADO ESKYNAO LTDA",
+        "endereco": {
+          "rua": "CARLOS GUEDES",
+          "numero": 122,
+          "bairro": "MATOZINHOS",
+          "cidade": "SAO JOAO DEL REI",
+          "estado": "MG"
+        }
+      }
+    }
+  ]
+}
+
