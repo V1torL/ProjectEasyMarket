@@ -1,6 +1,10 @@
+// Importa a função para criar estilos globais;
 import { createGlobalStyle } from "styled-components"
+
+// Importa os breakpoints;
 import { DEVICE_BREAKPOINTS } from "./deviceBreakpoints"
 
+// Cria os estilos globais da aplicação;
 export default createGlobalStyle`
   * {
     margin: 0;

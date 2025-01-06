@@ -1,3 +1,4 @@
+// Define os pontos de breakpoints para responsividade;
 export const DEVICE_BREAKPOINTS = {
     XS: "280px",
     SM: "425px",

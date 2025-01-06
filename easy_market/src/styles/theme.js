@@ -1,3 +1,4 @@
+// Exporta uma coleção de cores que serão utilizadas na aplicação;
 export default {
     COLORS: {
       BACKGROUND_100: "#F5F5F5",

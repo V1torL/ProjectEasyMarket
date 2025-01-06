@@ -1,6 +1,10 @@
+// Importa a biblioteca styled-components para criar componentes estilizados;
 import styled from "styled-components"
+
+// Importa os breakpoints;
 import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakpoints"
 
+// Estiliza o contêiner principal da página;
 export const Container = styled.div`
   width: 100%;
   height: 100vh;
@@ -16,6 +20,7 @@ export const Container = styled.div`
   }
 `
 
+// Estiliza a nota;
 export const Nota = styled.div`
   width: 100%;
 
@@ -43,6 +48,7 @@ export const Nota = styled.div`
   }
 `
 
+// Estiliza a tabela;
 export const Table = styled.table`
   width: 100%;
   border-collapse: collapse;
@@ -147,7 +153,7 @@ export const Table = styled.table`
     }
   }
 `
-
+// Estiliza o botão de remover;
 export const Remove = styled.div`
   width: 100%;
   margin-top: 1.25rem;

@@ -7,7 +7,7 @@ export function CardNote({ data, ...rest }) {
       name: `Itens ${data.itens.length}`,
     },
     {
-      name: `R$ ${data.valorTotalNota.toFixed(2)}`, // Garantindo que o valor esteja formatado
+      name: `R$ ${data.valorTotalNota}`,
     },
     {
       name: `${data.dataDeEfetuacao.dia}/${data.dataDeEfetuacao.mes}/${data.dataDeEfetuacao.ano}`,

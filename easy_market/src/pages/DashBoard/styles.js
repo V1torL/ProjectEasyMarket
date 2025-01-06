@@ -1,6 +1,10 @@
-import styled from "styled-components";
-import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakpoints";
+// Importa a biblioteca styled-components para criar componentes estilizados;
+import styled from "styled-components"
 
+// Importa os breakpoints;
+import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakpoints"
+
+// Estiliza o contêiner principal da página;
 export const Container = styled.div`
   width: 100%;
   height: 100vh;
@@ -16,6 +20,7 @@ export const Container = styled.div`
   }
 `;
 
+// Estiliza o painel de dashboard com gráficos e elementos organizados em uma grid;
 export const DashBoard = styled.div`
   display: grid;
   grid-template-columns: auto auto auto;

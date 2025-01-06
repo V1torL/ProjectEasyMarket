@@ -1,6 +1,10 @@
-import styled from "styled-components";
-import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakpoints";
+// Importa a biblioteca styled-components para criar componentes estilizados;
+import styled from "styled-components"
 
+// Importa os breakpoints;
+import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakpoints"
+
+// Estiliza o cabeçalho;
 export const Header = styled.header`
   text-align: left;
   font-size: 1rem;
@@ -10,6 +14,7 @@ export const Header = styled.header`
   color: #333; // Ajuste a cor conforme o tema da aplicação
 `;
 
+// Estiliza o contêiner principal da página;
 export const Container = styled.div`
   width: 100%;
   height: 100vh;
@@ -26,12 +31,14 @@ export const Container = styled.div`
   }
 `;
 
+// Estiliza a área de busca das notas;
 export const Search = styled.div`
   display: flex;
   gap: 1.25rem;
   align-items: center;
 `;
 
+// Estiliza a lista de notas;
 export const List = styled.div`
   margin-top: 1.875rem;
   padding: 0.625rem;
@@ -52,6 +59,7 @@ export const List = styled.div`
   }
 `;
 
+// Estiliza o botão para carregar mais notas;
 export const More = styled.div`
   width: 100%;
   margin-top: 1.25rem;

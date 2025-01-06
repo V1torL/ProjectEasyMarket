@@ -1,12 +1,16 @@
+// Importa a biblioteca styled-components para criar componentes estilizados;
 import styled from "styled-components"
+
+// Importa os breakpoints;
 import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakpoints"
 
+// Estiliza o contêiner principal da página;
 export const Container = styled.main`
   width: 100%;
   background-color: ${({ theme }) => theme.COLORS.BACKGROUND_100};
   min-height: 100vh;
 `
-
+// Estiliza o conteudo da página;
 export const Content = styled.div`
   max-width: 1008px;
   height: 100vh;

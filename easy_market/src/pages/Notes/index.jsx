@@ -34,7 +34,7 @@ export function Notes() {
   const navigate = useNavigate()
 
   function handlePreview() {
-    navigate(`/preview-note`)
+    navigate(`/preview-note/${id}`)
   }
 
   function handleNewNote() {
@@ -52,9 +52,8 @@ export function Notes() {
   useEffect(() => {
     async function fetchLists() {
       try {
-        const response = await fetch("/itens.json")
-        const data = await response.json()
-        setNotes(data.produtos)
+        const response = await api.get(`/notes/web/database/${user.id}`)
+        setNotes(response.data)
       } catch (error) {
         console.error("Erro ao buscar as notas:", error)
       } finally {
@@ -63,7 +62,7 @@ export function Notes() {
     }
 
     fetchLists()
-  }, [])
+  }, [user.id])
 
   return (
     <Container>

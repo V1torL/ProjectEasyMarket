@@ -25,7 +25,14 @@ export function NewNote() {
   const { showPopup } = usePopup()
 
   function toggleScanning() {
-    setScanning((prev) => !prev)
+    if (scanning) {
+      // Se já estiver escaneando, interrompe o processo
+      setScanning(false)
+    } else {
+      // Se não estiver escaneando, começa o processo
+      setScanning(true)
+      handleScan()
+    }
   }
 
   async function handleScan() {
@@ -42,39 +49,51 @@ export function NewNote() {
 
       if (code) {
         setScanning(false)
-        showPopup("Scanner feito com sucesso! 📷", "Nota sendo salva localmente.")
-        handleSaveScrape({ url: code.data })
+        showPopup(
+          "Scanner feito com sucesso! 📷",
+          "Aguarde, retornaremos uma mensagem quando tudo estiver pronto."
+        )
+
+        try {
+          const response = await api.post(`/notes/scrape`, { url: code.data })
+
+          handleSaveScrape(response.data)
+        } catch (error) {
+          if (error.response) {
+            showPopup(error.response.data.message)
+          } else {
+            showPopup("Não foi possível cadastrar. ❌")
+          }
+        } finally {
+          setScanning(false)
+        }
+      } else {
+        //showPopup("Não conseguimos ler o QR code. ❌")
       }
     }
   }
 
-  function handleSaveScrape(result) {
-    setLoading(true);
-  
+  async function handleSaveScrape(result) {
+    setLoading(true)
+
     try {
-      const storedNotes = JSON.parse(localStorage.getItem("Notas")) || [];
-      const nextId = parseInt(localStorage.getItem("nextNoteId") || "0", 10);
-  
-      const newNote = {
-        id: nextId,
-        ...result,
-        userEmail: user.email,
-        date: new Date().toISOString(),
-      };
-  
-      const updatedNotes = [...storedNotes, newNote];
-      localStorage.setItem("Notas", JSON.stringify(updatedNotes));
-      localStorage.setItem("nextNoteId", nextId + 1);
-  
-      showPopup("Nota cadastrada com sucesso. 🗂️", "Redirecionando...");
-      navigate(-1);
+      await api.post(`/notes/newNote/${user.id}`, result)
     } catch (error) {
-      showPopup("Não foi possível salvar a nota. ❌");
+      if (error.response) {
+        showPopup(error.response.data.message)
+      } else {
+        showPopup("Não foi possível cadastrar. ❌")
+      }
     } finally {
-      setLoading(false);
+      showPopup(
+        "Nota cadastrada com sucesso. 🗂️",
+        "Você será redirecionado para página Minhas Notas."
+      )
+
+      navigate(-1)
+      setLoading(false)
     }
   }
-  
 
   function handleSaveManual() {
     if (manualUrl.trim() === "") {

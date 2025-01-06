@@ -1,7 +1,13 @@
+// Importa a biblioteca styled-components para criar componentes estilizados;
 import styled from "styled-components"
+
+// Importa uma imagem de fundo que será usada na página;
 import image from "../../assets/background.jfif"
+
+// Importa os breakpoints;
 import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakpoints"
 
+// Estiliza o contêiner principal da página;
 export const Container = styled.div`
   height: 100vh;
 
@@ -9,6 +15,7 @@ export const Container = styled.div`
   align-items: stretch;
 `
 
+// Estiliza o formulário;
 export const Form = styled.form`
   width: 34.375rem;
   padding: 0 6.25rem;
@@ -50,6 +57,7 @@ export const Form = styled.form`
   }
 `
 
+// Estiliza a imagem de fundo da página;
 export const BackgroundImg = styled.div`
   flex: 1;
   background: url(${image}) no-repeat center center;

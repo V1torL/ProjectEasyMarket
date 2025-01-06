@@ -1,6 +1,10 @@
+// Importa a biblioteca styled-components para criar componentes estilizados;
 import styled from "styled-components"
+
+// Importa os breakpoints;
 import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakpoints"
 
+// Estiliza o contêiner principal da página;
 export const Container = styled.div`
   width: 100%;
   height: 100vh;
@@ -16,6 +20,7 @@ export const Container = styled.div`
   }
 `
 
+// Estiliza o contêiner de registros;
 export const Record = styled.div`
   display: flex;
   align-items: center;
@@ -47,6 +52,7 @@ export const Record = styled.div`
   }
 `
 
+// Estiliza o contêiner de inputs;
 export const InputWrapper = styled.div`
   display: flex;
   gap: 8px;
