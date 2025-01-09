@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 import { useAuth } from "../../hooks/auth"
+import { api } from "../../services/api"
 
 import { IoQrCode } from "react-icons/io5"
 import { PacmanLoader } from "react-spinners"

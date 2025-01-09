@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react"
 import { useNavigate } from "react-router-dom"
 import { useAuth } from "../../hooks/auth"
 import { usePopup } from "../../hooks/PopupContext"
+import { api } from "../../services/api"
 
 import Webcam from "react-webcam"
 import jsQR from "jsqr"
@@ -85,10 +86,6 @@ export function NewNote() {
         showPopup("Não foi possível cadastrar. ❌")
       }
     } finally {
-      showPopup(
-        "Nota cadastrada com sucesso. 🗂️",
-        "Você será redirecionado para página Minhas Notas."
-      )
 
       navigate(-1)
       setLoading(false)
